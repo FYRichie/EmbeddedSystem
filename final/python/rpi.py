@@ -76,12 +76,13 @@ def main():
                 if (Readch.supportsRead()):
                     time.sleep(0.1)
 
-                    if(cur != Readch.read()):
-                        cur = Readch.read()
-                        print("Readch.read(): ", Readch.read())
+                    read = Readch.read()
+                    if(cur != read):
+                        cur = read
+                        print("Readch.read(): ", cur)
 
-                        if Readch.read() in [b"r", b"l", b"s", b"n"]:
-                            light_mode(Readch.read())
+                        if cur in [b"r", b"l", b"s", b"n"]:
+                            light_mode(cur)
 
     except KeyboardInterrupt:
         print("KeyboardInterrupt")
