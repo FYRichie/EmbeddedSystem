@@ -10,28 +10,24 @@ def light_mode(mode):
     print(mode)
     if mode == b"r":
         # TODO
-        GPIO.output(35, GPIO.HIGH)
-        time.sleep(1)
-        GPIO.output(35, GPIO.LOW)
+        GPIO.output(37, GPIO.HIGH)
+        GPIO.output(38, GPIO.LOW)
         print("Turn right")
         pass
     if mode == b"l":
         # TODO
-        GPIO.output(36, GPIO.HIGH)
-        time.sleep(1)
-        GPIO.output(36, GPIO.LOW)
+        GPIO.output(37, GPIO.LOW)
+        GPIO.output(38, GPIO.HIGH)
         print("Turn left")
         pass
     if mode == b"s":
         # TODO
         GPIO.output(37, GPIO.HIGH)
-        time.sleep(1)
-        GPIO.output(37, GPIO.LOW)
+        GPIO.output(38, GPIO.HIGH)
         print("Stopping")
         pass
     if mode == b"n":
-        GPIO.output(38, GPIO.HIGH)
-        time.sleep(1)
+        GPIO.output(37, GPIO.LOW)
         GPIO.output(38, GPIO.LOW)
         print("Nothing to do")
         pass
@@ -48,8 +44,8 @@ def main():
     # use RPi board pin numbers
     GPIO.setmode(GPIO.BOARD)
 
-    GPIO.setup(35, GPIO.OUT)
-    GPIO.setup(36, GPIO.OUT)
+    # GPIO.setup(35, GPIO.OUT)
+    # GPIO.setup(36, GPIO.OUT)
     GPIO.setup(37, GPIO.OUT)
     GPIO.setup(38, GPIO.OUT)
 
