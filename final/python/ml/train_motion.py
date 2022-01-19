@@ -26,10 +26,6 @@ def hook(module, feat_in, feat_out: torch.TensorType):
     dec_bits = 15 - int_bits
     # print("Int bits: %d, dec bits: %d" % (int_bits, dec_bits))
 
-
-
-
-
 def train():
     train_set = MotionSet(config["data_dir"])
     print("Train set length: %d" % len(train_set))
